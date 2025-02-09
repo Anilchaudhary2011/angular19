@@ -28,20 +28,15 @@ export class LoginComponent {
       }
   
       const { userName, password } = this.loginform.value;
-  
-      // Call the login method from AppService to authenticate the user
       const isLoggedIn = this.appservice.login(userName, password);
   
       if (isLoggedIn) {
-        // If login is successful, navigate to the profile page
         this.router.navigate(['/profile']);
       } else {
         alert('Invalid username or password!')
-        // this.errorMessage = 'Invalid username or password!';
       }
     }
   
-    // Convenience method to get the form controls
     get f() {
       return this.loginform.controls;
     }
