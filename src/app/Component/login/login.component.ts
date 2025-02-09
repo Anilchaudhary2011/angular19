@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms'
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms'
 import { AppServicesService } from '../../Services/app-services.service';
 import { Router } from '@angular/router';
 
@@ -12,32 +12,31 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   loginform!: FormGroup;
   errorMessage: string = '';
-  constructor(private fb:FormBuilder,private appservice:AppServicesService,private router:Router){
-   
+  constructor(private fb: FormBuilder, private appservice: AppServicesService, private router: Router) {
+
   }
-  ngOnInit(){
+  ngOnInit() {
     this.loginform = this.fb.group({
       userName: [null, [Validators.required]],
-      password:[null, [Validators.required]]
+      password: [null, [Validators.required]]
     })
   }
-  submit(){
-      if (this.loginform.invalid) {
-        // If the form is invalid, return without doing anything
-        return;
-      }
-  
-      const { userName, password } = this.loginform.value;
-      const isLoggedIn = this.appservice.login(userName, password);
-  
-      if (isLoggedIn) {
-        this.router.navigate(['/profile']);
-      } else {
-        alert('Invalid username or password!')
-      }
+  submit() {
+    if (this.loginform.invalid) {
+      return;
     }
-  
-    get f() {
-      return this.loginform.controls;
+
+    const { userName, password } = this.loginform.value;
+    const isLoggedIn = this.appservice.login(userName, password);
+
+    if (isLoggedIn) {
+      this.router.navigate(['/profile']);
+    } else {
+      alert('Invalid username or password!')
     }
+  }
+
+  get f() {
+    return this.loginform.controls;
+  }
 }

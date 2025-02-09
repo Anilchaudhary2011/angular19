@@ -75,8 +75,9 @@ export class AppServicesService {
     // if (!this.loggedInUser && localStorage.getItem('user')) {
     //   this.loadUserFromLocalStorage(); 
     // }
-    return !!this.loggedInUser; 
+    return !!this.loggedInUser;
   }
+  
 
   getUser(): IUser | null {
     return this.loggedInUser;
