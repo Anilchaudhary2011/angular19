@@ -1,0 +1,25 @@
+.main{
+    display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 100vh;
+}
+.main1{
+    border: 1px solid lightgrey;
+    background-color: lightgrey;
+    padding: 0px 35px 35px 35px;
+}
+.hed{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.error{
+    color: red;
+    text-align: center;
+}
+.buttons{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}

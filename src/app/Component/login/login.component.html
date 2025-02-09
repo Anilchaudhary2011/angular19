@@ -1,0 +1,18 @@
+<div class="main">
+    <form [formGroup]="loginform" class="main1">
+        <div>
+            <h2 class="col-sm-12 hed">Welcome</h2>
+            <div class="col-sm-12">
+                <label for="username">UserName</label>
+                <input type="text" class="form-control" formControlName="userName">
+            </div>
+            <div class="col-sm-12">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" formControlName="password">
+            </div>
+            <div class="col-sm-12 buttons">
+                <button class="btn col-sm-3" (click)="submit()">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
