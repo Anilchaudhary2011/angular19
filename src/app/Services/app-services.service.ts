@@ -66,7 +66,6 @@ export class AppServicesService {
     return false;
   }
 
-  // Logout method: Clear logged-in user from service and localStorage
   logout(): void {
     this.loggedInUser = null;
     localStorage.removeItem('user');
